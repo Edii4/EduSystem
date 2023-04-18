@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "22662718050",
+    "project_id": "edusystem-28518",
+    "storage_bucket": "edusystem-28518.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22662718050:android:8c64077f52503a59f9673b",
+        "android_client_info": {
+          "package_name": "com.example.edusystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22662718050-kg4julpmb1cqsfqr11rh3sh2khqjosr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.edusystem",
+            "certificate_hash": "ca596b1429dd83646f987608c887f1895300e830"
+          }
+        },
+        {
+          "client_id": "22662718050-srg4stde9d4nlq3t8mr3f5nufo1m31g8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1_6WsKsf5D2GQtiHRV9lmd2JOcXpxjqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22662718050-srg4stde9d4nlq3t8mr3f5nufo1m31g8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

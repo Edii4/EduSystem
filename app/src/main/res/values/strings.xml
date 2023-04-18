@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EduSystem</string>
+    <string name="username">Felhasználónév</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="register">Regisztráció</string>
+    <string name="passwordRE">Jelszó mégegyszer</string>
+    <string name="email">Email</string>
+    <string name="cancel">Mégse</string>
+</resources>
