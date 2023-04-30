@@ -1,12 +1,20 @@
 package com.example.edusystem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String LOG_TAG = RegisterActivity.class.getName();
@@ -17,6 +25,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText passwordEditText;
     EditText passwordREEditText;
     private SharedPreferences preferences;
+    private FirebaseAuth mAuth;
+
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
         passwordEditText.setText(password);
         passwordREEditText.setText(password);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Log.i(LOG_TAG, "onCreate");
     }
 
@@ -54,45 +67,35 @@ public class RegisterActivity extends AppCompatActivity {
         String passwordRE = passwordREEditText.getText().toString();
 
         Log.i(LOG_TAG, "Regisztrált: " + username + ", jelszó: " + password + ", email: " + email);
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Log.d(LOG_TAG, "sikeres regisztráció");
+                    landingPage();
+                }
+                else {
+                    Log.d(LOG_TAG, "nem sikerült");
+                }
+            }
+        });
+    }
+
+    public void landingPage() {
+        Intent intent = new Intent(this, LandingPageActivity.class);
+        startActivity(intent);
     }
 
     public void cancel(View view) {
         finish();
     }
-
     @Override
     protected void onStart() {
-        Log.i(LOG_TAG, "onStart");
         super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.i(LOG_TAG, "onStop");
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.i(LOG_TAG, "onDestroy");
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.i(LOG_TAG, "onPause");
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        Log.i(LOG_TAG, "onResume");
-        super.onResume();
-    }
-
-    @Override
-    protected void onRestart() {
-        Log.i(LOG_TAG, "onRestart");
-        super.onRestart();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            landingPage();
+        }
     }
 }

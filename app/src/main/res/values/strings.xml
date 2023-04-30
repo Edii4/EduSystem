@@ -7,4 +7,43 @@
     <string name="passwordRE">Jelszó mégegyszer</string>
     <string name="email">Email</string>
     <string name="cancel">Mégse</string>
+    <string name="loginGoogle">Bejelentkezés Google fiókkal</string>
+    <string name="personalData">Saját adatok</string>
+    <string name="studies">Tanulmányok</string>
+    <string name="subjects">Tárgyak</string>
+    <string name="exams">Vizsgák</string>
+    <string name="logout">Kijelentkezés</string>
+
+    <string-array name="subject_item_names">
+        <item>Programozási nyelvek</item>
+        <item>Programozási nyelvek</item>
+        <item>Adatbázis alapú rendszerek</item>
+        <item>Adatbázis alapú rendszerek</item>
+        <item>Assembly Programozás</item>
+        <item>Assembly Programozás</item>
+        <item>Digitális képfeldolgozás</item>
+        <item>Digitális képfeldolgozás</item>
+    </string-array>
+
+    <string-array name="subject_item_types">
+        <item>Gyakorlat</item>
+        <item>Előadás</item>
+        <item>Gyakorlat</item>
+        <item>Előadás</item>
+        <item>Gyakorlat</item>
+        <item>Előadás</item>
+        <item>Gyakorlat</item>
+        <item>Előadás</item>
+    </string-array>
+
+    <string-array name="subject_item_credit">
+        <item>2 Kredit</item>
+        <item>2 Kredit</item>
+        <item>2 Kredit</item>
+        <item>2 Kredit</item>
+        <item>1 Kredit</item>
+        <item>1 Kredit</item>
+        <item>3 Kredit</item>
+        <item>3 Kredit</item>
+    </string-array>
 </resources>
